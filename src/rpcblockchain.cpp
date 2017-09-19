@@ -87,7 +87,7 @@ Object blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool fPri
     if (blockindex->pnext)
         result.push_back(Pair("nextblockhash", blockindex->pnext->GetBlockHash().GetHex()));
 
-    result.push_back(Pair("flags", strprintf("%s%s","proof-of-work")));
+    result.push_back(Pair("flags", "proof-of-work"));
     result.push_back(Pair("proofhash", blockindex->GetBlockHash().GetHex()));
     Array txinfo;
     BOOST_FOREACH (const CTransaction& tx, block.vtx)
